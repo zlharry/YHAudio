@@ -8,7 +8,9 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (nonatomic, weak) UITableView *tableView;
 
 @end
 
@@ -16,14 +18,57 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    
+    self.title = @"关于播放声音的封装";
+    
+    self.tableView.frame = self.view.bounds;
+}
+
+#pragma mark - 延迟加载 begin
+- (UITableView *)tableView
+{
+    if (!_tableView) {
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+        [self.view addSubview:tableView];
+        _tableView = tableView;
+    }
+    
+    return _tableView;
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UITableViewDataSource begin
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 10;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *cellID = @"CELL_ID";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue2 reuseIdentifier:cellID];
+    }
+    
+    cell.textLabel.text = @"one";
+    cell.detailTextLabel.text = @"sub";
+    
+    return cell;
+}
+#pragma mark - UITableViewDataSource end
+
+
+#pragma mark - UITableViewDelegate begin
+#pragma mark - UITableViewDelegate end
 
 
 @end
