@@ -14,6 +14,7 @@
 		4ACCA4FA1EE84CA8001CE684 /* YHAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCA4F91EE84CA8001CE684 /* YHAudioPlayer.m */; };
 		4AD5F72B1EE8D5E200522AB5 /* PlayShortSoundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F72A1EE8D5E200522AB5 /* PlayShortSoundVC.m */; };
 		4AD5F72F1EE8DE5900522AB5 /* in.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4AD5F72E1EE8DE5900522AB5 /* in.caf */; };
+		4AD5F7321EE94D0900522AB5 /* YHAudioModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F7311EE94D0900522AB5 /* YHAudioModel.m */; };
 		4AEBB46F1EE7E71F0096C479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AEBB46D1EE7E71F0096C479 /* Main.storyboard */; };
 		4AEBB4711EE7E71F0096C479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AEBB4701EE7E71F0096C479 /* Assets.xcassets */; };
 		4AEBB4741EE7E71F0096C479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AEBB4721EE7E71F0096C479 /* LaunchScreen.storyboard */; };
@@ -32,6 +33,8 @@
 		4AD5F7291EE8D5E200522AB5 /* PlayShortSoundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayShortSoundVC.h; sourceTree = "<group>"; };
 		4AD5F72A1EE8D5E200522AB5 /* PlayShortSoundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayShortSoundVC.m; sourceTree = "<group>"; };
 		4AD5F72E1EE8DE5900522AB5 /* in.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = in.caf; sourceTree = "<group>"; };
+		4AD5F7301EE94D0900522AB5 /* YHAudioModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHAudioModel.h; sourceTree = "<group>"; };
+		4AD5F7311EE94D0900522AB5 /* YHAudioModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHAudioModel.m; sourceTree = "<group>"; };
 		4AEBB4611EE7E71F0096C479 /* YHAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AEBB46E1EE7E71F0096C479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AEBB4701EE7E71F0096C479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -87,6 +90,8 @@
 			children = (
 				4ACCA4F81EE84CA8001CE684 /* YHAudioPlayer.h */,
 				4ACCA4F91EE84CA8001CE684 /* YHAudioPlayer.m */,
+				4AD5F7301EE94D0900522AB5 /* YHAudioModel.h */,
+				4AD5F7311EE94D0900522AB5 /* YHAudioModel.m */,
 			);
 			path = YHAudioPlayer;
 			sourceTree = "<group>";
@@ -235,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ACCA4FA1EE84CA8001CE684 /* YHAudioPlayer.m in Sources */,
+				4AD5F7321EE94D0900522AB5 /* YHAudioModel.m in Sources */,
 				4A0490991EE7F8E700C4EF10 /* ViewController.m in Sources */,
 				4A0490981EE7F8E700C4EF10 /* main.m in Sources */,
 				4A0490971EE7F8E700C4EF10 /* AppDelegate.m in Sources */,

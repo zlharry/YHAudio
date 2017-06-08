@@ -25,47 +25,44 @@ NSMutableDictionary *_audioIDs;
 
 /** 提示音播放完成后的回调 */
 void soundCompleteCallback(SystemSoundID soundID,void * clientData){
-    NSLog(@"播放完成...");
-    
-    NSLog(@"%d", soundID);
-    NSLog(@"%@", clientData);
+    [_audioIDs enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        YHAudioModel *model = (YHAudioModel *)obj;
+        if (model.soundID == soundID) {
+            if (model.finishPlayBlock) {
+                model.finishPlayBlock(model.soundID, model.soundFileName);
+            }
+        }
+    }];
 }
 
 /** 通过资源文件名播放一段提示音 */
-+ (void)playShortSoundWithSoundFileName:(NSString *)soundFileName
++ (void)playShortSoundWithSoundFileName:(NSString *)soundFileName finishPlayBlock:(YHAudioPlayerDidFinishedPlaySoundBlock)finishPlayBlock
 {
     // 获取系统声音ID
-    SystemSoundID soundID = [self soundIDWithAudioName:soundFileName];
-    
-    // 设置回调函数
-    AudioServicesAddSystemSoundCompletion(soundID,NULL,NULL,soundCompleteCallback,NULL);
-    
+    YHAudioModel *audioModel = [self soundIDWithAudioName:soundFileName finishPlayBlock:finishPlayBlock];
     // 播放音效
-    AudioServicesPlaySystemSound(soundID);
+    AudioServicesPlaySystemSound(audioModel.soundID);
 }
 
-+ (SystemSoundID)soundIDWithAudioName:(NSString *)audioName
++ (YHAudioModel *)soundIDWithAudioName:(NSString *)audioName finishPlayBlock:(YHAudioPlayerDidFinishedPlaySoundBlock)finishPlayBlock
 {
-    SystemSoundID soundID = 0;
     
-    // 如果已经加载过了
-    if ((soundID = [_audioIDs[audioName] unsignedIntValue]) != 0)
-    {
-        return soundID;
-    }
-    // 如果没有加载过
-    else
+    // 如果没有加载过了
+    if (!_audioIDs[audioName])
     {
         NSString *audioFilePath = [[NSBundle mainBundle] pathForResource:audioName ofType:nil];
         NSURL *audioFileUrl = [NSURL fileURLWithPath:audioFilePath];
         
         // 获取系统声音ID
+        SystemSoundID soundID;
         AudioServicesCreateSystemSoundID((__bridge CFURLRef _Nonnull)(audioFileUrl), &soundID);
         
-        _audioIDs[audioName] = @(soundID);
+        AudioServicesAddSystemSoundCompletion(soundID,NULL,NULL,soundCompleteCallback, NULL);
+        
+        _audioIDs[audioName] = [YHAudioModel modelWithSoundID:soundID soundFileName:audioName finishPlayBlock:finishPlayBlock];
     }
     
-    return soundID;
+    return _audioIDs[audioName];
 }
 
 @end

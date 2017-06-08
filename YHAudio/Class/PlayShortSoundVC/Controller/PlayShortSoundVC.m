@@ -64,7 +64,10 @@
 - (void)playSoundBtnClicked
 {
     NSLog(@"即将播放");
-    [YHAudioPlayer playShortSoundWithSoundFileName:@"in.caf"];
+    [YHAudioPlayer playShortSoundWithSoundFileName:@"in.caf" finishPlayBlock:^(SystemSoundID soundID, NSString *soundFileName) {
+        NSLog(@"%d  --  %@", soundID, soundFileName);
+        
+    }];
 }
 
 @end
