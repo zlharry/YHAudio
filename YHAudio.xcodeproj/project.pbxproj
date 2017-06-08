@@ -13,6 +13,7 @@
 		4A04909F1EE8001C00C4EF10 /* homeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04909E1EE8001C00C4EF10 /* homeModel.m */; };
 		4ACCA4FA1EE84CA8001CE684 /* YHAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCA4F91EE84CA8001CE684 /* YHAudioPlayer.m */; };
 		4AD5F72B1EE8D5E200522AB5 /* PlayShortSoundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F72A1EE8D5E200522AB5 /* PlayShortSoundVC.m */; };
+		4AD5F72F1EE8DE5900522AB5 /* in.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4AD5F72E1EE8DE5900522AB5 /* in.caf */; };
 		4AEBB46F1EE7E71F0096C479 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AEBB46D1EE7E71F0096C479 /* Main.storyboard */; };
 		4AEBB4711EE7E71F0096C479 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4AEBB4701EE7E71F0096C479 /* Assets.xcassets */; };
 		4AEBB4741EE7E71F0096C479 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AEBB4721EE7E71F0096C479 /* LaunchScreen.storyboard */; };
@@ -30,6 +31,7 @@
 		4ACCA4F91EE84CA8001CE684 /* YHAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHAudioPlayer.m; sourceTree = "<group>"; };
 		4AD5F7291EE8D5E200522AB5 /* PlayShortSoundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayShortSoundVC.h; sourceTree = "<group>"; };
 		4AD5F72A1EE8D5E200522AB5 /* PlayShortSoundVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayShortSoundVC.m; sourceTree = "<group>"; };
+		4AD5F72E1EE8DE5900522AB5 /* in.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = in.caf; sourceTree = "<group>"; };
 		4AEBB4611EE7E71F0096C479 /* YHAudio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YHAudio.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AEBB46E1EE7E71F0096C479 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4AEBB4701EE7E71F0096C479 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -106,6 +108,22 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
+		4AD5F72C1EE8DE5900522AB5 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4AD5F72D1EE8DE5900522AB5 /* Sounds */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4AD5F72D1EE8DE5900522AB5 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				4AD5F72E1EE8DE5900522AB5 /* in.caf */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 		4AEBB4581EE7E71F0096C479 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +152,7 @@
 		4AEBB4641EE7E71F0096C479 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4AD5F72C1EE8DE5900522AB5 /* Resource */,
 				4AEBB46D1EE7E71F0096C479 /* Main.storyboard */,
 				4AEBB4701EE7E71F0096C479 /* Assets.xcassets */,
 				4AEBB4721EE7E71F0096C479 /* LaunchScreen.storyboard */,
@@ -202,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4AEBB4741EE7E71F0096C479 /* LaunchScreen.storyboard in Resources */,
+				4AD5F72F1EE8DE5900522AB5 /* in.caf in Resources */,
 				4AEBB4711EE7E71F0096C479 /* Assets.xcassets in Resources */,
 				4AEBB46F1EE7E71F0096C479 /* Main.storyboard in Resources */,
 			);

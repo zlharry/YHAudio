@@ -99,9 +99,10 @@
     }
     
     
+    homeModel *model = self.modelArray[indexPath.row];
     
-    cell.textLabel.text = @"one";
-    cell.detailTextLabel.text = @"sub";
+    cell.textLabel.text = model.title;
+    cell.detailTextLabel.text = model.subTiele;
     
     return cell;
 }

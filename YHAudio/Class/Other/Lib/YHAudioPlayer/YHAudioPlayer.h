@@ -10,4 +10,7 @@
 
 @interface YHAudioPlayer : NSObject
 
+/** 通过资源文件名播放一段提示音 */
++ (void)playShortSoundWithSoundFileName:(NSString *)soundFileName;
+
 @end
