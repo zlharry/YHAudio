@@ -10,6 +10,7 @@
 #import "homeModel.h"
 
 #import "PlayShortSoundVC.h"
+#import "PlayLocalMusicVC.h"
 
 @interface ViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,7 +27,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    self.title = @"关于播放声音的封装";
+    self.title = @"声音播放汇总";
     
     self.tableView.frame = self.view.bounds;
     
@@ -75,6 +76,8 @@
 {
     // 播放短时间声音的控制器
     [self addModelWithTitle:@"播放提示音效" subTitle:@"可以选择震动或不振动" tarClass:[PlayShortSoundVC class]];
+    // 播放本地音乐
+    [self addModelWithTitle:@"播放本地音乐" subTitle:@"一个本地的音乐播放器" tarClass:[PlayLocalMusicVC class]];
 }
 
 #pragma mark - UITableViewDataSource begin

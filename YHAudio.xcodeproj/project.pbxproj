@@ -12,6 +12,9 @@
 		4A0490991EE7F8E700C4EF10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A0490961EE7F8E700C4EF10 /* ViewController.m */; };
 		4A04909F1EE8001C00C4EF10 /* homeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A04909E1EE8001C00C4EF10 /* homeModel.m */; };
 		4A16713C1EEA26F800A3AADD /* YHSystemSoundCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A16713B1EEA26F800A3AADD /* YHSystemSoundCache.m */; };
+		4A1671401EEA391700A3AADD /* YHMusicPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A16713F1EEA391700A3AADD /* YHMusicPlayer.m */; };
+		4A1671451EEA398500A3AADD /* PlayLocalMusicVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4A1671441EEA398500A3AADD /* PlayLocalMusicVC.m */; };
+		4A1671471EEA417400A3AADD /* one.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4A1671461EEA417400A3AADD /* one.mp3 */; };
 		4ACCA4FA1EE84CA8001CE684 /* YHAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 4ACCA4F91EE84CA8001CE684 /* YHAudioPlayer.m */; };
 		4AD5F72B1EE8D5E200522AB5 /* PlayShortSoundVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AD5F72A1EE8D5E200522AB5 /* PlayShortSoundVC.m */; };
 		4AD5F72F1EE8DE5900522AB5 /* in.caf in Resources */ = {isa = PBXBuildFile; fileRef = 4AD5F72E1EE8DE5900522AB5 /* in.caf */; };
@@ -30,6 +33,11 @@
 		4A04909E1EE8001C00C4EF10 /* homeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = homeModel.m; sourceTree = "<group>"; };
 		4A16713A1EEA26F800A3AADD /* YHSystemSoundCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHSystemSoundCache.h; sourceTree = "<group>"; };
 		4A16713B1EEA26F800A3AADD /* YHSystemSoundCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHSystemSoundCache.m; sourceTree = "<group>"; };
+		4A16713E1EEA391700A3AADD /* YHMusicPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHMusicPlayer.h; sourceTree = "<group>"; };
+		4A16713F1EEA391700A3AADD /* YHMusicPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHMusicPlayer.m; sourceTree = "<group>"; };
+		4A1671431EEA398500A3AADD /* PlayLocalMusicVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayLocalMusicVC.h; sourceTree = "<group>"; };
+		4A1671441EEA398500A3AADD /* PlayLocalMusicVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayLocalMusicVC.m; sourceTree = "<group>"; };
+		4A1671461EEA417400A3AADD /* one.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = one.mp3; sourceTree = "<group>"; };
 		4ACCA4F81EE84CA8001CE684 /* YHAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YHAudioPlayer.h; sourceTree = "<group>"; };
 		4ACCA4F91EE84CA8001CE684 /* YHAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YHAudioPlayer.m; sourceTree = "<group>"; };
 		4AD5F7291EE8D5E200522AB5 /* PlayShortSoundVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayShortSoundVC.h; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 		4A04908F1EE7F8E700C4EF10 /* Class */ = {
 			isa = PBXGroup;
 			children = (
+				4A1671411EEA396300A3AADD /* PlayLocalMusicVC */,
 				4AD5F7271EE8D5C900522AB5 /* PlayShortSoundVC */,
 				4A0490901EE7F8E700C4EF10 /* Other */,
 			);
@@ -80,9 +89,36 @@
 		4A0490931EE7F8E700C4EF10 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
+				4A16713D1EEA390300A3AADD /* YHMusicPlayer */,
 				4ACCA4F71EE84CA8001CE684 /* YHAudioPlayer */,
 			);
 			path = Lib;
+			sourceTree = "<group>";
+		};
+		4A16713D1EEA390300A3AADD /* YHMusicPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				4A16713E1EEA391700A3AADD /* YHMusicPlayer.h */,
+				4A16713F1EEA391700A3AADD /* YHMusicPlayer.m */,
+			);
+			path = YHMusicPlayer;
+			sourceTree = "<group>";
+		};
+		4A1671411EEA396300A3AADD /* PlayLocalMusicVC */ = {
+			isa = PBXGroup;
+			children = (
+				4A1671421EEA396300A3AADD /* Controller */,
+			);
+			path = PlayLocalMusicVC;
+			sourceTree = "<group>";
+		};
+		4A1671421EEA396300A3AADD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4A1671431EEA398500A3AADD /* PlayLocalMusicVC.h */,
+				4A1671441EEA398500A3AADD /* PlayLocalMusicVC.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		4ACCA4F71EE84CA8001CE684 /* YHAudioPlayer */ = {
@@ -124,6 +160,7 @@
 		4AD5F72D1EE8DE5900522AB5 /* Sounds */ = {
 			isa = PBXGroup;
 			children = (
+				4A1671461EEA417400A3AADD /* one.mp3 */,
 				4AD5F72E1EE8DE5900522AB5 /* in.caf */,
 			);
 			path = Sounds;
@@ -228,6 +265,7 @@
 				4AEBB4741EE7E71F0096C479 /* LaunchScreen.storyboard in Resources */,
 				4AD5F72F1EE8DE5900522AB5 /* in.caf in Resources */,
 				4AEBB4711EE7E71F0096C479 /* Assets.xcassets in Resources */,
+				4A1671471EEA417400A3AADD /* one.mp3 in Resources */,
 				4AEBB46F1EE7E71F0096C479 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,9 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ACCA4FA1EE84CA8001CE684 /* YHAudioPlayer.m in Sources */,
+				4A1671401EEA391700A3AADD /* YHMusicPlayer.m in Sources */,
 				4A16713C1EEA26F800A3AADD /* YHSystemSoundCache.m in Sources */,
 				4A0490991EE7F8E700C4EF10 /* ViewController.m in Sources */,
 				4A0490981EE7F8E700C4EF10 /* main.m in Sources */,
+				4A1671451EEA398500A3AADD /* PlayLocalMusicVC.m in Sources */,
 				4A0490971EE7F8E700C4EF10 /* AppDelegate.m in Sources */,
 				4A04909F1EE8001C00C4EF10 /* homeModel.m in Sources */,
 				4AD5F72B1EE8D5E200522AB5 /* PlayShortSoundVC.m in Sources */,
