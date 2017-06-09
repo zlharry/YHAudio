@@ -74,7 +74,7 @@
 - (void)setupModelArray
 {
     // 播放短时间声音的控制器
-    [self addModelWithTitle:@"one" subTitle:@"two" tarClass:[PlayShortSoundVC class]];
+    [self addModelWithTitle:@"播放提示音效" subTitle:@"可以选择震动或不振动" tarClass:[PlayShortSoundVC class]];
 }
 
 #pragma mark - UITableViewDataSource begin

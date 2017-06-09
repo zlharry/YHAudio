@@ -17,28 +17,29 @@
 
 @implementation YHAudioPlayer
 
-/** 提示音播放完成后的回调 */
-void soundCompleteCallback(SystemSoundID soundID,void * clientData){
-    
-}
-
 /** 通过资源文件名播放一段提示音 */
 + (void)playShortSoundWithSoundFileName:(NSString *)soundFileName shake:(BOOL)shake finishPlayBlock:(YHAudioPlayerDidFinishedPlaySoundBlock)finishPlayBlock;
 {
-    
-    
     SystemSoundID soundID = [YHSystemSoundCache soundIDWithFileName:soundFileName];
-    
-    
     
     // 播放音效
     if (shake)
     {
-        AudioServicesPlayAlertSound(soundID);
+        AudioServicesPlayAlertSoundWithCompletion(soundID,
+                                                  ^{
+                                                      if (finishPlayBlock) {
+                                                          finishPlayBlock(soundID);
+                                                      }
+                                                  });
     }
     else
     {
-        AudioServicesPlaySystemSound(soundID);
+        AudioServicesPlaySystemSoundWithCompletion(soundID,
+                                                   ^{
+                                                       if (finishPlayBlock) {
+                                                           finishPlayBlock(soundID);
+                                                       }
+                                                   });
     }
     
 }

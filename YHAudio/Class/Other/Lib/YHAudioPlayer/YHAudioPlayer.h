@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "YHSystemSoundCache.h"
 
-typedef void(^YHAudioPlayerDidFinishedPlaySoundBlock) (SystemSoundID soundID, NSString *soundFileName);
+typedef void(^YHAudioPlayerDidFinishedPlaySoundBlock) (SystemSoundID soundID);
 
 @interface YHAudioPlayer : NSObject
 
