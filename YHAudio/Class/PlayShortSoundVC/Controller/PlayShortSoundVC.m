@@ -13,6 +13,8 @@
 
 /** 点击播放短音频的按钮 */
 @property (nonatomic, weak) UIButton *playSoundBtn;
+/** 点击播放短音频的按钮(带震动) */
+@property (nonatomic, weak) UIButton *playAlertSoundBtn;
 
 @end
 
@@ -31,9 +33,15 @@
 {
     CGFloat playX = 10;
     CGFloat playY = 80;
-    CGFloat playW = self.view.frame.size.width - 3 * playX;
+    CGFloat playW = self.view.frame.size.width - 1 * playX;
     CGFloat playH = 40;
     self.playSoundBtn.frame = CGRectMake(playX, playY, playW, playH);
+    
+    CGFloat playAlerX = playX;
+    CGFloat playAlerY = playY + playH + 10;
+    CGFloat playAlerW = playW;
+    CGFloat playAlerH = playH;
+    self.playAlertSoundBtn.frame = CGRectMake(playAlerX, playAlerY, playAlerW, playAlerH);
 }
 
 #pragma mark - 延迟加载
@@ -59,15 +67,39 @@
     return _playSoundBtn;
 }
 
+/** 点击播放短音频的按钮(带震动) */
+- (UIButton *)playAlertSoundBtn
+{
+    if (!_playAlertSoundBtn) {
+        UIButton *btn = [[UIButton alloc] init];
+        [self.view addSubview:btn];
+        _playAlertSoundBtn = btn;
+        
+        [btn setTitle:@"播放提示音(同时手机震动)" forState:UIControlStateNormal];
+        btn.layer.masksToBounds = YES;
+        btn.layer.cornerRadius = 5;
+        btn.layer.borderColor = [UIColor blueColor].CGColor;
+        [btn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        btn.layer.borderWidth = 2;
+        
+        [btn addTarget:self action:@selector(playAlertSoundBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    
+    return _playAlertSoundBtn;
+}
 
 #pragma mark - 点击按钮的响应
 - (void)playSoundBtnClicked
 {
-    NSLog(@"即将播放");
-    [YHAudioPlayer playShortSoundWithSoundFileName:@"in.caf" finishPlayBlock:^(SystemSoundID soundID, NSString *soundFileName) {
-        NSLog(@"%d  --  %@", soundID, soundFileName);
-        
-    }];
+    NSLog(@"即将开始播放");
+    [YHAudioPlayer playShortSoundWithSoundFileName:@"in.caf" shake:NO finishPlayBlock:NULL];
+}
+
+- (void)playAlertSoundBtnClicked
+{
+    NSLog(@"即将开始播放（震动）");
+    [YHAudioPlayer playShortSoundWithSoundFileName:@"in.caf" shake:YES finishPlayBlock:NULL];
 }
 
 @end
