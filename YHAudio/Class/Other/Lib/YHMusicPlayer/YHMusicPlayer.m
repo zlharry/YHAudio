@@ -54,7 +54,7 @@
     NSError *error = nil;
     self.musicPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:localMusicUrl error:&error];
     if (error) {
-        NSLog(@"%@", error);
+        NSLog(@"播放器初始化错误：%@", error);
     }
     self.duration = self.musicPlayer.duration;
     self.musicPlayer.numberOfLoops = 0; // 重复播放的次数

@@ -102,7 +102,7 @@
 {
     NSLog(@"即将开始播放（震动）");
     [YHAudioPlayer playShortSoundWithSoundFileName:@"in.caf" shake:YES finishPlayBlock:^(SystemSoundID soundID) {
-        NSLog(@"播放结束了：%d", soundID);
+        NSLog(@"播放结束了（震动）：%d", soundID);
     }];
 }
 
